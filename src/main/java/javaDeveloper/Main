@@ -1,0 +1,27 @@
+package com.projeto;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Informe o valor inicial: ");
+            int inicio = sc.nextInt();
+
+            Contador c = new Contador(inicio);
+
+            System.out.print("Informe o limite: ");
+            int limite = sc.nextInt();
+
+            if (inicio <= limite) {
+                c.contarCrescente(limite);
+            } else {
+                c.contarDecrescente(limite);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Entrada inválida! Digite um número inteiro.");
+        }
+    }
+}
