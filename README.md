@@ -7,7 +7,7 @@ O objetivo é registrar minha jornada, organizar exemplos e compartilhar conheci
 
 ## 🎯 Objetivo
 
-- Consolidar aprendizado em **Java, Python, SQL e automação (RPA)**  
+- Consolidar aprendizado em **Java e automação (RPA)**  
 - Praticar boas práticas de **código limpo, testes automatizados e versionamento**  
 - Explorar novas ferramentas e frameworks como **Spring Boot, Maven, Selenium**  
 - Deixar registrado meu progresso e evolução no desenvolvimento de software  
