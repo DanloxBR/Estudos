@@ -23,6 +23,8 @@ O objetivo é registrar minha jornada, organizar exemplos e compartilhar conheci
 ---
 
 ## 📦 Como Executar
+
 1. **Clone o repositório:**
-   ```bash
+```bash
 git clone https://github.com/DanloxBR/estudos.git
+
