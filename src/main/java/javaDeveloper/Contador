@@ -1,0 +1,22 @@
+package com.projeto;
+
+public class Contador {
+        private int valor;
+
+        public Contador(int valorInicial) {
+            this.valor = valorInicial;
+        }
+
+        public void contarCrescente(int limite) {
+            for (int i = valor; i <= limite; i++) {
+                System.out.println("Contando: " + i);
+            }
+        }
+
+        public void contarDecrescente(int limite) {
+            for (int i = valor; i >= limite; i--) {
+                System.out.println("Contando: " + i);
+            }
+        }
+    }
+
