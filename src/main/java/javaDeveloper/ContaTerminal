@@ -6,25 +6,47 @@ public class ContaTerminal {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Por favor, digite o número da Conta:");
-        int numero = sc.nextInt();
-        sc.nextLine();
+        String numeroConta;
+        while (true) {
+            System.out.println("Digite o número da Conta (apenas números):");
+            numeroConta = sc.nextLine();
+            if (numeroConta.matches("\\d+")) break;
+            System.out.println("Número inválido! Use apenas dígitos.");
+        }
 
-        System.out.println("Por favor, digite o número da Agência:");
-        String agencia = sc.nextLine();
+        String agencia;
+        while (true) {
+            System.out.println("Digite o número da Agência (formato 1234-5):");
+            agencia = sc.nextLine();
+            if (agencia.matches("\\d{4}-\\d")) break;
+            System.out.println("Agência inválida! Use o formato 1234-5.");
+        }
 
-        System.out.println("Por favor, digite o nome do Cliente:");
-        String nomeCliente = sc.nextLine();
+        String nomeCliente;
+        while (true) {
+            System.out.println("Digite o nome do Cliente:");
+            nomeCliente = sc.nextLine();
+            if (nomeCliente.matches("[A-Za-zÀ-ú ]+")) break;
+            System.out.println("Nome inválido! Use apenas letras e espaços.");
+        }
 
-        System.out.println("Por favor, digite o saldo da Conta:");
-        double saldo = sc.nextDouble();
+        String saldoStr;
+        double saldo;
+        while (true) {
+            System.out.println("Digite o saldo da Conta:");
+            saldoStr = sc.nextLine();
+            if (saldoStr.matches("\\d+(\\.\\d{1,2})?")) {
+                saldo = Double.parseDouble(saldoStr);
+                break;
+            }
+            System.out.println("Saldo inválido! Digite apenas números (até 2 casas decimais).");
+        }
 
-        String mensagem = "Olá " + nomeCliente
-                + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia
-                + ", conta " + numero
-                + " e seu saldo " + saldo + " já está disponível para saque.";
+        System.out.printf(
+                "Olá %s, obrigado por criar uma conta em nosso banco, sua agência é %s, conta %s e seu saldo %.2f já está disponível para saque.%n",
+                nomeCliente, agencia, numeroConta, saldo
+        );
 
-        System.out.println(mensagem);
         sc.close();
     }
 }
