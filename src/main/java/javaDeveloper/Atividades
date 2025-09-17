@@ -15,10 +15,8 @@ public class Atividades {
         System.out.println("Escreva a quantidade em estoque: ");
         int estoque = sc.nextInt();
 
-        System.out.println("Produtos cadastrados: "
-                + nomProduto + " custa: "
-                + precoProduto + " | Existem: "
-                + estoque + " em estoque.");
+        System.out.printf("Produto cadastrado: %s | Preço: R$ %.2f | Estoque: %d%n",
+                nomProduto, precoProduto, estoque);
 
         sc.close();
     }
