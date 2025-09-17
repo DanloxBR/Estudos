@@ -1,0 +1,25 @@
+package com.dio.atividades;
+
+import java.util.Scanner;
+
+public class Atividades {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Escreva o nome do produto: ");
+        String nomProduto = sc.next();
+
+        System.out.println("Escreva o preço do produto: ");
+        Double precoProduto = sc.nextDouble();
+
+        System.out.println("Escreva a quantidade em estoque: ");
+        int estoque = sc.nextInt();
+
+        System.out.println("Produtos cadastrados: "
+                + nomProduto + " custa: "
+                + precoProduto + " | Existem: "
+                + estoque + " em estoque.");
+
+        sc.close();
+    }
+}
