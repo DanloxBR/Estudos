@@ -1,0 +1,31 @@
+package com.dio.atividade;
+
+import com.bringto.selenium.TelaHelper;
+import org.openqa.selenium.By;
+
+public class Selenium {
+    public static void main(String[] args) {
+
+        try {
+            TelaHelper.navegar("https://www.selenium.dev/selenium/web/web-form.html");
+            TelaHelper.maximizar();
+
+            TelaHelper.preencherCampo(By.xpath("//*[@name='my-text']"), "Oliveira", 15);
+
+            TelaHelper.clicar(By.xpath("/html/body/main/div/form/div/div[2]/label[1]/select"),15);
+            TelaHelper.clicar(By.xpath("/html/body/main/div/form/div/div[2]/label[1]/select/option[2]"),15);
+
+            TelaHelper.clicar(By.xpath("//*[@id='my-check-1']"),15);
+            TelaHelper.clicar(By.xpath("//*[@id='my-radio-2']"),15);
+            TelaHelper.clicar(By.xpath("//button[@type='submit']"),15);
+
+            String mensagem = TelaHelper.obterTexto(By.xpath("//*[@id='message']"),15);
+            System.out.println("Mensagem Final: " + mensagem);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            TelaHelper.finalizar();
+        }
+    }
+}
