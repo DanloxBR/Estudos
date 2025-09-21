@@ -1,0 +1,33 @@
+package com.dio.atividade;
+
+import com.bringto.selenium.TelaHelper;
+import org.openqa.selenium.By;
+
+public class MercadoLivre {
+    public static void main(String[] args) {
+
+        try {
+            TelaHelper.navegar("https://www.mercadolivre.com.br/");
+            TelaHelper.maximizar();
+
+            TelaHelper.preencherCampo(By.xpath("//*[@id=\"cb1-edit\"]"), "smartphone",15);
+            TelaHelper.clicar(By.xpath("/html/body/header/div/div[2]/form/button"),15);
+
+            TelaHelper.scrollParaElemento(By.xpath("//*[@id=\"root-app\"]/div/div[2]/aside/section[2]/div[6]"),15);
+            TelaHelper.clicar(By.xpath("//*[@id=\"root-app\"]/div/div[2]/aside/section[2]/div[6]/ul/li[1]/a/span[1]"),15);
+
+            String nomeProduto = TelaHelper.obterTexto(By.xpath("//*[@id=\"root-app\"]/div/div[2]/section/div[5]/ol/li[3]/div/div/div/div[2]/h3/a/text()"),15);
+            String precoProduto = TelaHelper.obterTexto(By.xpath("//*[@id=\"root-app\"]/div/div[2]/section/div[5]/ol/li[3]/div/div/div/div[2]/div"),15);
+            String linkProduto = TelaHelper.obterTexto(By.xpath("//*[@id=\"root-app\"]/div/div[2]/section/div[5]/ol/li[3]/div/div/div/div[2]/h3/a"),15);
+
+            System.out.println("Produto: " + nomeProduto +
+                               "Custa: " + precoProduto +
+                                "Link: " + linkProduto);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            TelaHelper.finalizar();
+        }
+    }
+}
